@@ -13,9 +13,8 @@ class HomeController extends BaseController{
         });
 
         console.log(user);
-        user.save(function (err, ok) {
-            console.log(err)
-        });
+        let result = await user.save();
+        console.log(res);
         //  UsersModel.save({
         //     name: 'test',
         //     age: 20,
