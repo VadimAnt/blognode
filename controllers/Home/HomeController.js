@@ -6,20 +6,15 @@ var connect = require('mongoose');
 class HomeController extends BaseController{
 
     async index(req, res, next){
-        var user = new UsersModel({
-            name: 'test',
-            age: 20,
-            bio:'a'
-        });
-
-        console.log(user);
-        let result = await user.save();
-        console.log(res);
-        //  UsersModel.save({
+        // var user = new UsersModel({
         //     name: 'test',
         //     age: 20,
-        //     bio: 'a'
+        //     bio:'a'
         // });
+
+        // console.log(user);
+        // let result = await user.save();
+
 
         res.render('Home/index', { title: 'dfgdfgdfg' });
     }
