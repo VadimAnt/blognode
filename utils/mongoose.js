@@ -11,3 +11,4 @@ exports.connect = mongoose.connection;
 exports.Schema  = mongoose.Schema;
 exports.ObjectIdSchema = mongoose.Schema.ObjectId;
 exports.ObjectId = mongoose.Types.ObjectId;
+exports.mongoose = mongoose;

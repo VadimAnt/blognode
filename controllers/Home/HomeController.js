@@ -9,6 +9,8 @@ class HomeController extends BaseController{
     }
 
     async index(req, res, next){
+        req.session.name = 'Test1';
+        console.log();
         // var user = new UsersModel({
         //     name: 'test',
         //     age: 20,
