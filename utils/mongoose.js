@@ -9,3 +9,5 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 exports.connect = mongoose.connection;
 exports.Schema = mongoose.Schema;
+exports.ObjectIdSchema = mongoose.Schema.ObjectId;
+exports.ObjectId = mongoose.Types.ObjectId;
