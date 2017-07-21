@@ -8,11 +8,6 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 let { mongoose } = require('./utils/mongoose');
 
-
-
-var index = require('./routes/index');
-var users = require('./routes/users');
-
 var app = express();
 
 // view engine setup
@@ -31,8 +26,8 @@ app.use(session({
     store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
 
-app.use('/', index);
-app.use('/users', users);
+app.use('/', require('./routes/index'));
+app.use('/users', require('./routes/users'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

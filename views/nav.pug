@@ -1,0 +1,16 @@
+nav.navbar.navbar-default
+    div.container
+        div.navbar-header
+            button( type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" )
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+                a(class="navbar-brand" href="#")
+        div(class="collapse navbar-collapse" id="bs-example-navbar-collapse-1")
+            console.log(menu)
+            ul(class="nav navbar-nav")
+                each item in menu
+                    li
+                        a(href=item.url)=item.name
+

@@ -1,13 +1,11 @@
 var menuModel = require('../models/Menu/MenuModel');
 
 module.exports = class BaseController {
-    constructor(){
-        this.menu = this.getMenu();
-    }
+    constructor(){}
 
     async getMenu(){
-        let user = await menuModel.find({});
-        console.log(user);
-        return user;
+       let res = await menuModel.find({});
+       return res;
     }
-}
+
+};

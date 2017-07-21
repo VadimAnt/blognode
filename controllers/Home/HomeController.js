@@ -9,8 +9,8 @@ class HomeController extends BaseController{
     }
 
     async index(req, res, next){
-        req.session.name = 'Test1';
-        console.log();
+
+
         // var user = new UsersModel({
         //     name: 'test',
         //     age: 20,
@@ -44,9 +44,12 @@ class HomeController extends BaseController{
 
 
         // let result = await  menu.create(arr);
-        // console.log(result);
+        console.log();
 
-        res.render('Home/index', { title: 'dfgdfgdfg' });
+        res.render('Home/index', {
+            title: 'dfgdfgdfg',
+            menu: await super.getMenu()
+        });
     }
 
 };
