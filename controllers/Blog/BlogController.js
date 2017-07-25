@@ -6,15 +6,13 @@ var connect = require('mongoose');
 
 class HomeController extends BaseController{
     constructor(req, res){
+        console.log(req, res);
         super(req, res);
     }
 
     async index(req, res, next){
-        var blogs = await blogsModel.find({}).sort({date: 'desc'}).limit(9);
         var menu = await super.getMenu();
-
         res.render('Home/index', {
-            menu: menu,
             blogs: blogs
         });
     }

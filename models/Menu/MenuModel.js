@@ -1,5 +1,5 @@
 let mongoose = require('mongoose');
-let { connect, Schema, ObjectIdSchema, ObjectId } = require('../../utils/mongoose');
+let { Schema, ObjectIdSchema, ObjectId } = require('../../utils/mongoose');
 
 
 const MenuSchema = new Schema({
