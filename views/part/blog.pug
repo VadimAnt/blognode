@@ -7,5 +7,4 @@ div(class="row")
                     h3=blog.name
                     p=blog.text
                     p
-                        a(href="#" class="btn btn-primary" role="button")="Button"
-                        a(href="#" class="btn btn-default" role="button")="Button"
+                        a(href="/blog/" + blog.id class="btn btn-primary" role="button")="Button"

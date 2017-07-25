@@ -10,6 +10,8 @@ class HomeController extends BaseController{
     }
 
     async index(req, res, next){
+
+        console.log('ddd')
         var blogs = await blogsModel.find({}).sort({date: 'desc'}).limit(9);
         var menu = await super.getMenu();
 
