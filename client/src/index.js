@@ -6,18 +6,21 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
-import { Router, Route, hashHistory } from 'react-router';
+import { Router, Route } from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory'
+import { syncHistoryWithStore } from 'react-router-redux';
 
 import reducer from './reducers/index';
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
+const history = syncHistoryWithStore(createHistory(), store);
+
 
 ReactDOM.render(
     <Provider store={store}>
-        <Router>
-
+        <Router history={history}>
+            <Route path="/" component={App} />
         </Router>
-        <App />
     </Provider>,
     document.getElementById('root')
 );

@@ -5,6 +5,7 @@ import { asyncGetMenus } from './actions/menus';
 
 class App extends Component {
   render() {
+      console.log(this.props.ownProps);
     return (
       <div className="App">
           <button onClick={this.props.getMenus}>GetMenu</button>
@@ -14,8 +15,9 @@ class App extends Component {
 }
 
 export default connect(
-    state => ({
-        menus: state.menus
+    (state, ownProps) => ({
+        menus: state,
+        ownProps: ownProps
     }),
     dispatch => ({
         getMenus: () => {
