@@ -25,6 +25,11 @@ app.use(session({
     secret: '3245234234234234234',
     store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
+app.all('/*', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next();
+});
 
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));

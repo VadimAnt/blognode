@@ -19,7 +19,10 @@ const history = syncHistoryWithStore(createHistory(), store);
 ReactDOM.render(
     <Provider store={store}>
         <Router history={history}>
-            <Route path="/" component={App} />
+            <div>
+                <Route path="/" component={App} />
+                <Route path="/test/:id" />
+            </div>
         </Router>
     </Provider>,
     document.getElementById('root')
