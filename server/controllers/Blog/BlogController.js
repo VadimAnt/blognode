@@ -9,28 +9,25 @@ class BlogController extends BaseController{
     }
 
     async index(req, res, next){
-        var menu = await super.getMenu();
-        let blogs = await blogModel.find({}).sort({date: 'desc'}).limit(9);
+        console.log('Blogs');
+        let blogs = await blogModel.find({}).sort({date: 'desc'});
 
-        res.render('Blog/index', {
-            menu: menu,
+        res.json({
             blogs:blogs
         });
     }
 
     async view(req, res, next){
-        let menu = await super.getMenu();
         let data = await blogModel.findOne({
             _id: req.params.id
         });
 
         console.log(data);
-        res.render('Blog/view', {
-            menu: menu,
-            data: data
+
+        res.json({
+            post: data
         });
     }
-
 };
 
 

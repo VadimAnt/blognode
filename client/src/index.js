@@ -12,6 +12,7 @@ import { syncHistoryWithStore, push } from 'react-router-redux';
 import reducer from './reducers/index';
 import Home from './components/home/home';
 import BlogList from "./components/blog/BlogList";
+import BlogSingle from "./components/blog/BlogSingle";
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 const history = syncHistoryWithStore(browserHistory, store);
@@ -25,6 +26,7 @@ ReactDOM.render(
             <Route component={App}>
                 <Route path="/" component={Home} />
                 <Route path="/blog" component={BlogList} />
+                <Route path="/blog/:id" component={BlogSingle} exact />
             </Route>
         </Router>
     </Provider>,

@@ -6,11 +6,10 @@ import { Link } from 'react-router';
 
 class Menu extends Component {
     componentDidMount(){
-        this.props.getMenu();
+        //this.props.getMenu();
     }
 
      render() {
-        console.log('tretertr')
         return (
             <nav>
                 <div className="container">
