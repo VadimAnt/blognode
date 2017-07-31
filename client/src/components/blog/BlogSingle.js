@@ -29,7 +29,7 @@ class BlogSingle extends Component {
 
 export default connect(
     state => ({
-        data: state
+        post: state
     }),
     dispatch => ({
         getSingleBlog: (id) => {

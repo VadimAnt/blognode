@@ -11,25 +11,29 @@ class BlogList extends Component {
 
 
     render() {
-        console.log( this.props);
-        return (
-            <div className="row">
-                <div>Blogs</div>
+        var len = this.props.posts.blogs.length;
+        if(len > 0) {
+            return (
                 <div className="row">
-                    <div>
-                        {
-                            // this.props.data.blogs.posts.map((item, key) => {
-                            //     return <BlogElem
-                            //         title={item.name}
-                            //         text={item.text}
-                            //         id={item._id}
-                            //     />
-                            // })
-                        }
+                    <div>Blogs</div>
+                    <div className="row">
+                        <div>
+                            {
+                                this.props.posts.blogs[len - 1].posts.map((item, key) => {
+                                    return <BlogElem
+                                        title={item.name}
+                                        text={item.text}
+                                        id={item._id}
+                                    />
+                                })
+                            }
+                        </div>
                     </div>
                 </div>
-            </div>
-        );
+            );
+        } else {
+            return <div></div>;
+        }
     }
 }
 
