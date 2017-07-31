@@ -11,20 +11,20 @@ class BlogList extends Component {
 
 
     render() {
-        console.log(this.props);
+        console.log( this.props);
         return (
             <div className="row">
                 <div>Blogs</div>
                 <div className="row">
                     <div>
                         {
-                            this.props.blogs.map((item, key) => {
-                                return <BlogElem
-                                    title={item.name}
-                                    text={item.text}
-                                    id={item._id}
-                                />
-                            })
+                            // this.props.data.blogs.posts.map((item, key) => {
+                            //     return <BlogElem
+                            //         title={item.name}
+                            //         text={item.text}
+                            //         id={item._id}
+                            //     />
+                            // })
                         }
                     </div>
                 </div>
@@ -35,7 +35,7 @@ class BlogList extends Component {
 
 export default connect(
     state => ({
-        blogs: state.blogs
+        posts: state
     }),
     dispatch => ({
         getBlogs: () => {

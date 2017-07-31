@@ -14,12 +14,12 @@ class BlogSingle extends Component {
             <div className="row">
                 <div className="col-sm-12 col-md-12">
                     <div className="row">
-                        <h3>{this.props.post.name}</h3>
+                        <h3>{this.props.data.name}</h3>
                     </div>
                 </div>
                 <div className="col-sm-12 col-md-12">
                     <div className="row">
-                        <p>{this.props.post.text}</p>
+                        <p>{this.props.data.text}</p>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@ class BlogSingle extends Component {
 
 export default connect(
     state => ({
-
+        data: state
     }),
     dispatch => ({
         getSingleBlog: (id) => {

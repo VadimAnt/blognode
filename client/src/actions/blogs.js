@@ -3,7 +3,7 @@ import axios from 'axios';
 export const asyncGetBlogs = () => dispatch => {
     axios.get('http://localhost:3001/blog')
         .then(res => {
-            dispatch({ type: 'FETCH_BLOGS_SUCCESS', payload: res.data.blogs });
+            dispatch({ type: 'FETCH_BLOGS_SUCCESS', payload: res.data.posts });
         });
 };
 

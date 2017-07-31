@@ -13,7 +13,7 @@ class BlogController extends BaseController{
         let blogs = await blogModel.find({}).sort({date: 'desc'});
 
         res.json({
-            blogs:blogs
+            posts:blogs
         });
     }
 
