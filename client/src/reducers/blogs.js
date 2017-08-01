@@ -1,10 +1,19 @@
-export default function menus(state = [], action){
+
+const initialState = {
+    posts: [],
+    post: []
+}
+
+
+
+
+export default function menus(state = initialState, action){
     switch(action.type){
         case 'FETCH_BLOGS_SUCCESS':
-            return [
+            return {
                 ...state,
-                { posts: action.payload }
-            ];
+                posts: action.payload
+            };
             break;
         case 'FETCH_SINGLE_SUCCESS':
             return [

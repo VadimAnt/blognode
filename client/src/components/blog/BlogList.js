@@ -1,49 +1,48 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import BlogElem from './BlogElem';
-import { asyncGetBlogs } from '../../actions/blogs';
+import * as postApi from '../../api/posts-api';
 
 class BlogList extends Component {
 
     componentDidMount(){
-        this.props.getBlogs();
+        postApi.getApiPosts();
     }
 
 
     render() {
-        var len = this.props.posts.blogs.length;
-        if(len > 0) {
+        //var len = this.props.posts.blogs.length;
+        //console.log(this.props);
+        //if(len > 0) {
             return (
                 <div className="row">
                     <div>Blogs</div>
                     <div className="row">
                         <div>
                             {
-                                this.props.posts.blogs[len - 1].posts.map((item, key) => {
-                                    return <BlogElem
-                                        title={item.name}
-                                        text={item.text}
-                                        id={item._id}
-                                    />
-                                })
+                                // this.props.posts.blogs[len - 1].posts.map((item, key) => {
+                                //     return <BlogElem
+                                //         title={item.name}
+                                //         text={item.text}
+                                //         id={item._id}
+                                //     />
+                                // })
                             }
                         </div>
                     </div>
                 </div>
             );
-        } else {
-            return <div></div>;
-        }
+        // } else {
+        //     return <div></div>;
+        // }
     }
 }
 
 export default connect(
-    state => ({
-        posts: state
-    }),
-    dispatch => ({
-        getBlogs: () => {
-            dispatch(asyncGetBlogs());
+    (state, ownProps) => (() => {
+        console.log(state);
+        return {
+            posts: state.posts
         }
     }))
 (BlogList);

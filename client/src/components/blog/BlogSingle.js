@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { asyncGetSingleBlog } from '../../actions/blogs';
+//import { asyncGetSingleBlog } from '../../actions/blogs';
 
 class BlogSingle extends Component {
 
@@ -33,7 +33,7 @@ export default connect(
     }),
     dispatch => ({
         getSingleBlog: (id) => {
-            dispatch(asyncGetSingleBlog(id));
+            //dispatch(asyncGetSingleBlog(id));
         }
     }))
 (BlogSingle);
