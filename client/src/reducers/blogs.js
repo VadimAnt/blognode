@@ -5,20 +5,18 @@ const initialState = {
 }
 
 
-
-
-export default function menus(state = initialState, action){
+export default function blogs(state = initialState, action){
     switch(action.type){
         case 'FETCH_BLOGS_SUCCESS':
             return {
                 ...state,
-                posts: action.payload
+                posts: action.posts
             };
             break;
         case 'FETCH_SINGLE_SUCCESS':
             return [
                 ...state,
-                { post: action.payload }
+                { post: action.post }
             ];
             break;
     }
