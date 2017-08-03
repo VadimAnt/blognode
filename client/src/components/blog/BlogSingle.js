@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-//import { asyncGetSingleBlog } from '../../actions/blogs';
+import { getApiPost } from '../../actions/blogs';
 
 class BlogSingle extends Component {
 
@@ -9,17 +9,16 @@ class BlogSingle extends Component {
     }
 
     render() {
-        console.log(this.props);
         return (
             <div className="row">
                 <div className="col-sm-12 col-md-12">
                     <div className="row">
-                        <h3>{this.props.data.name}</h3>
+                        <h3>{this.props.posts.post.name}</h3>
                     </div>
                 </div>
                 <div className="col-sm-12 col-md-12">
                     <div className="row">
-                        <p>{this.props.data.text}</p>
+                        <p>{this.props.posts.post.text}</p>
                     </div>
                 </div>
             </div>
@@ -29,11 +28,11 @@ class BlogSingle extends Component {
 
 export default connect(
     state => ({
-        post: state
+        posts: state.posts
     }),
     dispatch => ({
         getSingleBlog: (id) => {
-            //dispatch(asyncGetSingleBlog(id));
+            dispatch(getApiPost(id));
         }
     }))
 (BlogSingle);

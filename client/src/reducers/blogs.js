@@ -14,10 +14,10 @@ export default function blogs(state = initialState, action){
             };
             break;
         case 'FETCH_SINGLE_SUCCESS':
-            return [
+            return {
                 ...state,
-                { post: action.post }
-            ];
+                post: action.post
+            };
             break;
     }
 
