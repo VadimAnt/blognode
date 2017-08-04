@@ -17,11 +17,7 @@ class Menu extends Component {
                         <ul className="nav navbar-nav">
                             <li key="1"><Link to="/">Home</Link></li>
                             <li key="2"><Link to="/blog" activeClassName="active">Blog</Link></li>
-                            {/*{*/}
-                                {/*this.props.menu.menus.map((item, key) => {*/}
-                                    {/*return <li key={key}><Link to={item.url}>{item.name}</Link></li>*/}
-                                {/*})*/}
-                            {/*}*/}
+                            <li key="3"><Link to="/contact" activeClassName="active">Contact</Link></li>
                         </ul>
                     </div>
                 </div>
