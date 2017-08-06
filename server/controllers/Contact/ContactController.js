@@ -1,6 +1,7 @@
-var express = require('express');
-var BaseController = require('../BaseController');
-var connect = require('mongoose');
+let express = require('express');
+let BaseController = require('../BaseController');
+let connect = require('mongoose');
+let contactModel = require('../../models/Contact/ContactModel');
 
 class ContactController extends BaseController{
     constructor(req, res){
@@ -8,13 +9,29 @@ class ContactController extends BaseController{
     }
 
     async index(req, res, next){
-        console.log(req.body, req.files);
+        try {
 
-        res.json({
-            menu: 'test'
-        });
+            console.log(req.files[0].filename);
+
+            let result = await contactModel.create({
+                name: req.body.name,
+                family: req.body.family,
+                email: req.body.email,
+                file: (req.files.length > 0) ? req.files[0].filename : ''
+            });
+
+            res.json({
+                name: req.body.name,
+                family: req.body.family,
+                email: req.body.email,
+                file: (req.files.length > 0) ? req.files[0].filename : ''
+            });
+        } catch (err){
+            return res.json({
+                menu: err.toString()
+            });
+        }
     }
-
 };
 
 var contactController = new ContactController();

@@ -12,17 +12,13 @@ class ContactForm extends Component {
 
     sendContactData(e){
         e.preventDefault();
-        console.log()
         let form = new FormData();
         form.append('file', this.file.files[0]);
         form.append('email', this.email.value);
         form.append('family', this.family.value);
-
-        //console.log(JSON.stringify(form.data));
+        form.append('name', this.name.value);
 
         this.props.sendData(form);
-
-
     }
 
 
