@@ -5,13 +5,13 @@ let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 let {multer, storage} = require('./utils/multer');
-
+let { passport } = require('./utils/jwt');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 let { mongoose } = require('./utils/mongoose');
 
 let app = express();
-
+app.use(passport.initialize());
 app.use(multer({ storage: storage }).any());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -47,6 +47,7 @@ app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 app.use('/blog', require('./routes/blog'));
 app.use('/contact', require('./routes/contact'));
+app.use('/auth', require('./routes/auth'));
 
 
 // catch 404 and forward to error handler
