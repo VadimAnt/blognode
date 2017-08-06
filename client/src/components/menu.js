@@ -34,5 +34,4 @@ export default connect(
         getMenu: () => {
             dispatch(asyncGetMenus());
         }
-    }))
-(Menu);
+    }))(Menu);

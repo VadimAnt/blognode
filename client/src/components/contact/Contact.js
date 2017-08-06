@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ContactForm from '../forms/ContactForms';
+import ContactForm from '../forms/ContactForm';
 
 class Contact extends Component {
     render() {
@@ -16,5 +16,4 @@ export default connect(
     }),
     dispatch => ({
 
-    }))
-(Contact);
+    }))(Contact);

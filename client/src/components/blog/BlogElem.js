@@ -27,5 +27,4 @@ export default connect(
     }),
     dispatch => ({
 
-    }))
-(BlogElem);
+    }))(BlogElem);

@@ -42,5 +42,4 @@ export default connect(
         getPosts: () => {
             dispatch(getApiPosts());
         }
-    }))
-(BlogList);
+    }))(BlogList);

@@ -34,5 +34,4 @@ export default connect(
         getSingleBlog: (id) => {
             dispatch(getApiPost(id));
         }
-    }))
-(BlogSingle);
+    }))(BlogSingle);

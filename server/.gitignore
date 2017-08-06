@@ -4,3 +4,4 @@ node_modules
 config/*
 !config/database_example.js
 !config/config_example.js
+public/uploads/*

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import BlogList from "../blog/BlogList";
 
 class Home extends Component {
     render() {
@@ -16,5 +15,4 @@ export default connect(
     }),
     dispatch => ({
 
-    }))
-(Home);
+    }))(Home);
