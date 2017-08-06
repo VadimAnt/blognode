@@ -13,19 +13,21 @@ class BlogList extends Component {
     render() {
         console.log(this.props)
             return (
-                <div className="row">
-                    <div>Blogs</div>
+                <div>
+                    <div className="row text-center">
+                        <h1>Blogs</h1>
+                    </div>
                     <div className="row">
                         <div>
-                            {
-                                this.props.posts.posts.map((item, key) => {
-                                    return <BlogElem
-                                        title={item.name}
-                                        text={item.text}
-                                        id={item._id}
-                                    />
-                                })
-                            }
+                        {
+                            this.props.posts.posts.map((item, key) => {
+                                return <BlogElem
+                                    title={item.name}
+                                    text={item.text.substr(0,200)}
+                                    id={item._id}
+                                />
+                            })
+                        }
                         </div>
                     </div>
                 </div>

@@ -18,6 +18,7 @@ class Menu extends Component {
                             <li key="1"><Link to="/">Home</Link></li>
                             <li key="2"><Link to="/blog" activeClassName="active">Blog</Link></li>
                             <li key="3"><Link to="/contact" activeClassName="active">Contact</Link></li>
+                            <li key="4"><Link to="/about" activeClassName="active">About</Link></li>
                         </ul>
                     </div>
                 </div>

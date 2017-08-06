@@ -10,7 +10,7 @@ class App extends Component {
           <header>
               <Menu/>
           </header>
-          <main className=" container">
+          <main className="container">
               {this.props.children}
           </main>
       </div>

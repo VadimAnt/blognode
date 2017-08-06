@@ -25,7 +25,7 @@ class ContactForm extends Component {
     render() {
         return (
             <div>
-                <div className="row">
+                <div className="row text-center">
                     <h1>Contact</h1>
                 </div>
                 <div className="row">

@@ -12,8 +12,8 @@ class BlogSingle extends Component {
         return (
             <div className="row">
                 <div className="col-sm-12 col-md-12">
-                    <div className="row">
-                        <h3>{this.props.posts.post.name}</h3>
+                    <div className="row text-center">
+                        <h1>{this.props.posts.post.name}</h1>
                     </div>
                 </div>
                 <div className="col-sm-12 col-md-12">

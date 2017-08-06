@@ -7,6 +7,7 @@ import Home from './components/home/home';
 import BlogList from "./components/blog/BlogList";
 import BlogSingle from "./components/blog/BlogSingle";
 import Contact from './components/contact/Contact';
+import About from './components/about/About';
 
 export default (
     <Router history={history}>
@@ -15,6 +16,7 @@ export default (
             <Route path="/blog" component={BlogList} />
             <Route path="/blog/:id" component={BlogSingle} />
             <Route path="/contact" component={Contact} />
+            <Route path="/about" component={About} />
         </Route>
     </Router>
 );

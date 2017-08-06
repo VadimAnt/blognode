@@ -4,15 +4,7 @@ let favicon = require('serve-favicon');
 let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
-let multer = require('multer');
-let storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, __dirname + '/public/uploads/')
-    },
-    filename: function (req, file, cb) {
-        cb(null, Date.now() + path.extname(file.originalname)) //Appending extension
-    }
-})
+let {multer, storage} = require('./utils/multer');
 
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
@@ -30,7 +22,6 @@ app.use(bodyParser.json());
 
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
