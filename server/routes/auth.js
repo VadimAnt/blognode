@@ -1,8 +1,8 @@
 var express = require('express');
-var BlogController = require('../controllers/Auth/AuthController');
+var AuthController = require('../controllers/Auth/AuthController');
 
 var router = express.Router();
 
-router.get('/login', BlogController.login);
+router.post('/login', AuthController.login);
 
 module.exports = router;

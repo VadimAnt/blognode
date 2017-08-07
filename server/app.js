@@ -49,6 +49,22 @@ app.use('/blog', require('./routes/blog'));
 app.use('/contact', require('./routes/contact'));
 app.use('/auth', require('./routes/auth'));
 
+app.get("/secret", passport.authenticate('jwt', { session: false }), function(req, res){
+    res.json({message: "Success! You can not see this without a token"});
+});
+
+let user = require('./models/user')
+app.get("/user", passport.authenticate('jwt', { session: false }), function(req, res){
+    res.json({message: "Success! You can not see this without a token"});
+});
+
+// app.get("/secretDebug",
+//     function(req, res, next){
+//         console.log(req.get('Authorization'));
+//         next();
+//     }, function(req, res){
+//         res.json("debugging");
+//     });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -3,7 +3,8 @@ let { Schema, ObjectIdSchema, ObjectId } = require('../../utils/mongoose');
 
 const UsersSchema = new Schema({
     _id:  {type:ObjectIdSchema, default: function () { return new ObjectId()} },
-    name: { type: String, default: 'hahaha' },
+    name: { type: String,},
+    password: { type: String},
     age: { type: Number, min: 18, index: true },
     bio: { type: String, match: /[a-z]/ },
     date: { type: Date, default: Date.now },
